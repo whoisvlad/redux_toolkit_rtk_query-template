@@ -31,3 +31,6 @@ Your app is ready to be deployed!
 
 Base simulation for **RTK-query** (so you can create some sort of API with **Redux-Toolkit**) with **json-server**.
 Runs on **port 5000**, all server data in **db.json** file. Might need to install json-server globally.
+
+
+

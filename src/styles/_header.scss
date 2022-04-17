@@ -1,0 +1,22 @@
+.header {
+  border-bottom: 2px solid papayawhip;
+  padding: 20px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+  a {
+    display: flex;
+    text-decoration: none;
+    color: papayawhip;
+    padding: 10px 20px;
+    transition: all 240ms;
+    border: 2px solid transparent;
+    text-transform: uppercase;
+    //margin-right: 20px;
+
+    &:hover, &.active {
+      border-color: papayawhip;
+    }
+  }
+}
