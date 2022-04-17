@@ -2,12 +2,19 @@ import { useDispatch }        from "react-redux";
 import { AppDispatch }        from "../store";
 import { bindActionCreators } from "@reduxjs/toolkit";
 import { allActions }         from "../reducers/all-actions";
+import { useMemo }            from "react";
 
 
 
 
-const useAppDispatch = () => useDispatch<AppDispatch>()
+export const useAppDispatch = () => useDispatch<AppDispatch>()
+
+// useMemo is used to avoid memory leak
+// when action are put into the dependency array of useEffect hook
 export const useActions = () => {
   const dispatch = useAppDispatch()
-  return bindActionCreators(allActions, dispatch)
+  
+  return useMemo(() => {
+    return bindActionCreators(allActions, dispatch)
+  }, [dispatch])
 }
